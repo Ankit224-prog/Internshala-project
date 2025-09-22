@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Text, Image, Font Size, Font Family & Font Color</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Left thumbnails -->
+  <div class="thumbnails" id="thumbnailsContainer"></div>
+
+  <!-- Pages + arrows wrapper -->
+  <div class="pages-wrapper">
+    <div class="arrow" id="prevBtn">‹</div>
+    <div class="pages" id="pagesContainer">
+      <!-- Initial Page -->
+      <div class="page active">
+        <img id="uploadedImage" style="display:none;" alt="Uploaded Image">
+        <div class="overlayText" contenteditable="true">
+          Yaha text ya image show hoga...
+          <button class="deleteBtn">❌</button>
+        </div>
+      </div>
+    </div>
+    <div class="arrow" id="nextBtn">›</div>
+  </div>
+
+  <!-- Right side: grey boxes stacked -->
+  <div class="side">
+    <div class="box">
+      <div style="font-size:24px;">T</div>
+      <button id="addBtn">Add Text</button>
+      <textarea id="descInput" placeholder="Type description here..."></textarea>
+    </div>
+    <div class="box">
+      <label for="fontSizeSelect">Font Size</label>
+      <select id="fontSizeSelect">
+        <option value="16">16px</option>
+        <option value="20" selected>20px</option>
+        <option value="24">24px</option>
+        <option value="28">28px</option>
+        <option value="32">32px</option>
+      </select>
+    </div>
+    <div class="box">
+      <label for="fontFamilySelect">Font Family</label>
+      <select id="fontFamilySelect">
+        <option value="Arial, sans-serif" selected>Arial</option>
+        <option value="'Times New Roman', serif">Times New Roman</option>
+        <option value="Courier, monospace">Courier</option>
+        <option value="Verdana, sans-serif">Verdana</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="Tahoma, sans-serif">Tahoma</option>
+      </select>
+    </div>
+    <div class="box">
+      <label for="fontColorInput">Font Color</label>
+      <input type="color" id="fontColorInput" value="#000000">
+    </div>
+    <div class="box">
+      <span>🖼️</span>
+      <button id="addImageBtn">Add Image</button>
+      <input type="file" id="imageInput" accept="image/*" style="display:none;">
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

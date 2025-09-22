@@ -1,0 +1,167 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Left thumbnails */
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumb-img {
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+/* Pages + arrows wrapper */
+.pages-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Arrow buttons */
+.arrow {
+  font-size: 30px;
+  font-weight: bold;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Pages container */
+.pages {
+  position: relative;
+  width: 280px;
+  height: 500px;
+  overflow: hidden;
+  border: 10px solid black;
+  flex-shrink: 0;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(227, 227, 122);
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: left 0.4s ease-in-out;
+}
+
+.page.active {
+  left: 0;
+}
+
+.page.prev {
+  left: -100%;
+}
+
+#uploadedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.overlayText {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  cursor: move;
+  word-wrap: break-word;
+  max-width: 90%;
+  white-space: pre-wrap;
+  font-family: Arial, sans-serif;
+  z-index: 2;
+}
+
+.deleteBtn {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  display: none;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+}
+
+.overlayText.selected .deleteBtn {
+  display: block;
+}
+
+/* Right side */
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.box {
+  width: 200px;
+  background-color: whitesmoke;
+  border: 3px solid grey;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  height: 60px;
+  display: none;
+  resize: none;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+select, input[type="color"] {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+}
